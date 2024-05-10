@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-def combinar_imagenes(imagen_original, mascara_binaria, fondo_nuevo):
+def combinar_imagenes(imagen_original, mascara_binaria, fondo_nuevo,titulo):
     # Verificar que las imágenes se hayan cargado correctamente
     if imagen_original is None or mascara_binaria is None or fondo_nuevo is None:
         print("No se pudieron cargar las imágenes.")
@@ -23,13 +23,8 @@ def combinar_imagenes(imagen_original, mascara_binaria, fondo_nuevo):
     if imagen_combinada is not None:
         imagen_combinada_rgb = cv2.cvtColor(imagen_combinada, cv2.COLOR_BGR2RGB)
         plt.imshow(imagen_combinada_rgb)
+        plt.title(titulo)
         plt.axis('off')
         plt.show()
 
-# Cargar las imágenes
-imagen_original = cv2.imread('IMG/objetoN.jpg')
-mascara_binaria = cv2.imread('IMG/umbral.jpg', cv2.IMREAD_GRAYSCALE)
-fondo_nuevo = cv2.imread('IMG/imagen_filtrada_media.jpg')
 
-# Combinar las imágenes
-imagen_combinada = combinar_imagenes(imagen_original, mascara_binaria, fondo_nuevo)

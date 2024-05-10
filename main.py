@@ -32,8 +32,7 @@ original = cv2.imread('IMG/objetoN.jpg')
 mascara_binaria = cv2.imread('IMG/umbral.jpg', cv2.IMREAD_GRAYSCALE)
 fondo_nuevo = cv2.imread('IMG/imagen_filtrada_media.jpg')
 fondo_nuevo2 = cv2.imread('IMG/imagen_filtrada_gaussiana.jpg')
-Imagen_comb_media = combinar_imagenes(original,mascara_binaria,fondo_nuevo)
-Imagen_comb_gauss = combinar_imagenes(original,mascara_binaria,fondo_nuevo2)
+combinar_imagenes(original,mascara_binaria,fondo_nuevo,'Imagen filtro media')
+combinar_imagenes(original,mascara_binaria,fondo_nuevo2, 'Imagen filtro gaussiano')
 
-mostrar_imagenes([Imagen_comb_media,Imagen_comb_gauss],['Imagen con filtro de media','Imagen con filtro gaussiano'])
 
